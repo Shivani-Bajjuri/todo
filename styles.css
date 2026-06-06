@@ -369,11 +369,18 @@ body::before {
 /* Footer credit */
 .site-footer {
   width: min(100%, 58rem);
-  margin-top: 1.2rem;
+  margin: 1.2rem auto 0;
   padding: 0.6rem 0 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color: rgba(42, 23, 48, 0.7);
   font-size: 0.98rem; /* match .task-text */
+}
+
+.site-footer p {
+  margin: 0;
 }
 
 .site-footer .heart {
