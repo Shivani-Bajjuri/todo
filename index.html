@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Things Done</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <h1 id="page-title">
+          <span>Get Things Done..</span>
+          <span class="cursor" aria-hidden="true"></span>
+        </h1>
+      </section>
+
+      <section class="composer" aria-label="Task composer">
+        <label class="sr-only" for="task-input">Add a task.</label>
+        <input id="task-input" type="text" placeholder="Add a task." autocomplete="off" maxlength="80" />
+        <label class="sr-only" for="task-priority">Priority</label>
+        <select id="task-priority" aria-label="Task priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button id="add-task" type="button">Lock in</button>
+      </section>
+
+      <p class="timestamp" id="timestamp" aria-live="polite"></p>
+
+      <section class="task-panel" aria-label="Task list">
+        <div class="task-panel__header">
+          <p>Tasks</p>
+          <span id="task-count">0</span>
+        </div>
+        <ul id="task-list" class="task-list"></ul>
+        <p class="empty-state" id="empty-state">Nothing here yet. Add the first move.</p>
+      </section>
+    </main>
+
+    <template id="task-template">
+      <li class="task-item">
+        <label class="task-check-wrap">
+          <input class="task-check" type="checkbox" aria-label="Mark task complete" />
+        </label>
+        <span class="task-main">
+          <span class="task-text"></span>
+          <span class="task-priority"></span>
+        </span>
+        <button type="button" class="task-remove" aria-label="Remove task">Remove</button>
+      </li>
+    </template>
+    <footer class="site-footer" aria-label="Site footer">
+      <p>Done by Shivani Bajjuri <span class="heart" aria-hidden="true">♥</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
